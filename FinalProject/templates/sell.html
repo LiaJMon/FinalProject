@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <method="get">
+        <p hidden>
+            <var>numStock = {{numStock}}</var>
+            <var>stockAvail = {{stockAvail}}</var>
+        </p>
+    <form action="/sell" method="post">
+        SELL:
+        <div class="form-control">
+            <select class="form-control" min="0" name="symbol" type="text"/>
+                <option disabled selected value>Symbol</option>
+                {% for i in range(numStock) %}
+                    <option value='{{stockAvail[i]}}'>{{stockAvail[i]}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            NUMBER OF SHARES:
+            <input class="form-control" name="shares" placeholder="Shares" type="number"/>
+        </div>
+        <button class="btn btn-primary" type="submit">Enter</button>
+    </form>
+{% endblock %}

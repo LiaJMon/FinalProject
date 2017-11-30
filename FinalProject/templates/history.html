@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Transaction History
+{% endblock %}
+
+{% block main %}
+    <body>
+        <table border=1>
+            <tr>
+                <th>Purchased or Sold</th>
+                <th>Stock</th>
+                <th>Purchase or Sale Price Per Share</th>
+                <th>Number of Shares</th>
+                <th>Date and Time Sold or Purchased</th>
+            </tr>
+            {% for i in range(numTransactions) %}
+            <tr>
+                {% for j in range(5) %}
+                    {% if j == 0 %}
+                    <td>
+                        {{boughtOrSold[i]}}
+                    </td>
+                    {% endif %}
+                    {% if j == 1 %}
+                    <td>
+                        {{stockTransact[i]}}
+                    </td>
+                    {% endif %}
+                    {% if j == 2 %}
+                    <td>
+                        {{priceTransact[i]}}
+                    </td>
+                    {% endif %}
+                    {% if j == 3 %}
+                    <td>
+                        {{amountTransact[i]}}
+                    </td>
+                    {% endif %}
+                    {% if j == 4 %}
+                    <td>
+                        {{dateTimeTransact[i]}}
+                    </td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+{% endblock %}

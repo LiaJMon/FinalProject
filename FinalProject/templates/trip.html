@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Trip
+{% endblock %}
+
+{% block main %}
+    <form action="/trip" method="post">
+        Trip Info:
+        <div class="form-control">
+            Trip Date:
+            <input autocomplete="off" autofocus class="form-control" name="tripDate" placeholder="Trip Date" input type="date"/>
+
+            <select class="form-control" name="region" type="text"/>
+                <option disabled selected value>Region:</option>
+                    <option value="Yard">Yard</option>
+                    <option value="River">River</option>
+                    <option value="Quad">Quad</option>
+            </select>
+            Time of Departure from Campus:
+            <input autocomplete="off" autofocus class="form-control" name="time" placeholder="Trip Time" input id="time" type="time">
+            Do you use venmo?
+            <input type="radio" name="venmo" value="1" checked> Yes<br>
+            <input type="radio" name="venmo" value="0"> No<br>
+
+            <select class="form-control" name="airline" type="text"/>
+                <option disabled selected value>Airline:</option>
+                    <option value="United">United</option>
+                    <option value="Delta">Delta</option>
+                    <option value="Delta">Delta</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Enter</button>
+    </form>
+{% endblock %}

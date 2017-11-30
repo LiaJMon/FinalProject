@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sold
+{% endblock %}
+
+{% block main %}
+    <p>
+        You sold {{shares}} share(s) of {{stock}} for {{price}} per share. You got {{money}} for selling and now have {{newCash}}.
+    </p>
+{% endblock %}
